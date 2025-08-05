@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NumRace</string>
+    <string name="race_to_a_number">Race to a number</string>
+    <string name="target_number">Target number:</string>
+    <string name="enter_target_num_40_65">Enter target num (40 – 65):</string>
+    <string name="play_game">Play Game</string>
+    <string name="players">Players:</string>
+    <string name="enter_name_of_player">Enter name of player</string>
+    <string name="_0">0</string>
+    <string name="enter_a_number">Enter a number (1 – 9)</string>
+    <string name="reset_game">Reset Game</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+</resources>

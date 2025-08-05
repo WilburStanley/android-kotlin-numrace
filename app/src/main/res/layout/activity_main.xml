@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/black">
+
+    <RelativeLayout
+        android:id="@+id/titleBarContainer"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="20dp"
+        android:background="@color/black">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/goBackBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/baseline_arrow_back"
+            android:background="@android:color/transparent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/titleBar"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:text="@string/race_to_a_number"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:textAllCaps="true"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@id/titleBarContainer"
+        android:id="@+id/gameConfigMainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/curve_top_gold_background"
+        android:visibility="visible">
+
+        <android.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+
+        <LinearLayout
+            android:id="@+id/gameConfigContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/curve_white_background"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="30dp"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:text="@string/target_number"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"/>
+
+            <android.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <EditText
+                android:id="@+id/targetNumberTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="false"
+                android:hint="@string/enter_target_num_40_65"
+                android:inputType="number|none"
+                android:fontFamily="@font/acme"
+                android:textColor="@color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/curve_gray_with_black_stroke_background"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/playerConfigContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/curve_white_background"
+            android:layout_marginHorizontal="30dp"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:text="@string/players"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"/>
+
+            <android.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <EditText
+                android:id="@+id/player1Txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="false"
+                android:hint="@string/enter_name_of_player"
+                android:inputType="text"
+                android:fontFamily="@font/acme"
+                android:textColor="@color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/curve_gray_with_black_stroke_background"/>
+
+            <android.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <android.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <EditText
+                android:id="@+id/player2Txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="false"
+                android:hint="@string/enter_name_of_player"
+                android:inputType="text"
+                android:fontFamily="@font/acme"
+                android:textColor="@color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/curve_gray_with_black_stroke_background"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/playGameBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="30dp"
+            android:text="@string/play_game"
+            android:textSize="30sp"
+            android:fontFamily="@font/acme"
+            android:paddingVertical="10dp"
+            android:textColor="@color/white"
+            android:background="@drawable/plain_curve_black_background"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/titleBarContainer"
+        android:id="@+id/gameContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/curve_top_gold_background"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/playerToMoveTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="30dp"
+            android:fontFamily="@font/acme"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/plain_curve_gray_background"/>
+
+        <TextView
+            android:id="@+id/currentNumValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="30dp"
+            android:fontFamily="@font/acme"
+            android:text="@string/_0"
+            android:textColor="@color/black"
+            android:textSize="60sp"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="10dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:background="@color/gray"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/inputField"
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:paddingHorizontal="10dp">
+
+                <EditText
+                    android:id="@+id/inputtedNumTxt"
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:autofillHints="false"
+                    android:importantForAutofill="no"
+                    android:hint="@string/enter_a_number"
+                    android:inputType="number|none"
+                    android:fontFamily="@font/acme"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:paddingVertical="15dp"
+                    android:paddingHorizontal="10dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/curve_gray_with_black_stroke_background"/>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/addBtn"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:src="@drawable/baseline_check"
+                    android:scaleType="fitCenter"
+                    android:background="@drawable/plain_curve_black_background"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/playerNamesContainer"
+                android:layout_below="@id/inputField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/player1Title"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/player_1"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/player2Title"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/acme"
+                    android:textAlignment="center"
+                    android:text="@string/player_2"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_below="@+id/playerNamesContainer"
+                android:layout_above="@+id/resetGameBtn"
+                android:id="@+id/listsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="20dp">
+
+                <ListView
+                    android:id="@+id/player1ListView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:divider="@android:color/darker_gray"
+                    android:dividerHeight="1dp"
+                    android:padding="8dp"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="8dp"/>
+
+                <ListView
+                    android:id="@+id/player2ListView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:divider="@android:color/darker_gray"
+                    android:dividerHeight="1dp"
+                    android:textColor="@color/black"
+                    android:padding="8dp"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/resetGameBtn"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="30dp"
+                android:text="@string/reset_game"
+                android:textSize="30sp"
+                android:fontFamily="@font/acme"
+                android:paddingVertical="10dp"
+                android:textColor="@color/white"
+                android:background="@drawable/plain_curve_black_background"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
